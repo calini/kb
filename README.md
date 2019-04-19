@@ -1,6 +1,6 @@
 # KB
 
-KB is a Go  API that shows computer availability in the Kilburn Building at the University of Manchester
+KB is a Go API that shows computer availability in the Kilburn Building at the University of Manchester
 
 ## Using the API
 
