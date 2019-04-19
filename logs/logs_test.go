@@ -19,6 +19,9 @@ func TestParseLogFolder(t *testing.T) {
 	// given
 	// create temporary directory inside the os.TempDir() and a mock log file in it
 	tmpFolder, err := ioutil.TempDir(os.TempDir(), "mock_logs")
+	if err != nil {
+		t.Error(err)
+	}
 	tmpFile := createTempLogFile(
 		tmpFolder,
 		[]byte(`calin tty1                      0:00    0.00s  0:00   0.00s asdf\n`),
