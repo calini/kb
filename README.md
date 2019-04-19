@@ -93,3 +93,26 @@ The reporter feeds the data to the API via the `/report/` endpoint:
 ```
 
 Will return a 200 OK and the state will be updated
+
+## Building it
+You need two components, one is the API which caches the status of the machines and returns the info (`/pull`), and the remote part which pushes the information from the network to the API (`/push`)
+
+To build them you run:
+
+```
+go build -o out/pull pull/main.go
+go build -o out/push push/main.go
+```
+
+To run the `push`, you do:
+
+```
+./out/push <path/to/logs>
+```
+
+
+To run the API, you do:
+
+```
+./out/pull
+```
