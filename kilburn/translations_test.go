@@ -43,7 +43,7 @@ func TestMapMachineToLab(t *testing.T) {
 		t.Errorf("That computer is in LF31; Reported %v", lab)
 	}
 
-	lab =  MapMachineToLab("retina")
+	lab = MapMachineToLab("retina")
 	if lab != "none" {
 		t.Errorf("That computer is not in Kilburn; Reported %v", lab)
 	}

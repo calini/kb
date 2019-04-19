@@ -1,7 +1,6 @@
 package logs
 
 import (
-	log "github.com/sirupsen/logrus"
 	"io"
 	"io/ioutil"
 	"kb/machine"
@@ -11,6 +10,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	log "github.com/sirupsen/logrus"
 )
 
 // TestParseLogFolder checks if ParseLogFolder correctly reads a directory of logs and produces the correct report
@@ -26,7 +27,7 @@ func TestParseLogFolder(t *testing.T) {
 	machineName := strings.TrimSuffix(path.Base(tmpFile.Name()), ".log")
 
 	// when
-	report, err  := ParseLogFolder(tmpFolder)
+	report, err := ParseLogFolder(tmpFolder)
 	if err != nil {
 		t.Error(err)
 	}
@@ -61,7 +62,6 @@ func TestParseLog(t *testing.T) {
 		t.Error("Should report machine full")
 	}
 }
-
 
 // TestParseLogEmpty checks if ParseLogFile correctly parses a given log *os.File of a free computer
 func TestParseLogEmpty(t *testing.T) {
@@ -106,7 +106,7 @@ func TestDeltaStateChanges(t *testing.T) {
 
 	newState := machine.LogReport{
 		"machine1": {
-			State: machine.Used,
+			State:     machine.Used,
 			Timestamp: time.Now(),
 		},
 	}
@@ -144,7 +144,7 @@ func TestStateChangedDifferent(t *testing.T) {
 
 	left := machine.StatusLog{
 		State:     machine.Free,
-		Timestamp: mockTime.Add(- 1 * time.Hour),
+		Timestamp: mockTime.Add(-1 * time.Hour),
 	}
 
 	right := machine.StatusLog{
