@@ -3,13 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/tidwall/pretty"
 	"io/ioutil"
+
 	"kb/machine"
 	"kb/store"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
+	"github.com/tidwall/pretty"
 )
 
 func main() {

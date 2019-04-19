@@ -22,9 +22,10 @@ func TestParseLogFolder(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
+
 	tmpFile := createTempLogFile(
 		tmpFolder,
-		[]byte(`calin tty1                      0:00    0.00s  0:00   0.00s asdf\n`),
+		[]byte("calin tty1                      0:00    0.00s  0:00   0.00s asdf\n"),
 	)
 
 	machineName := strings.TrimSuffix(path.Base(tmpFile.Name()), ".log")
@@ -53,7 +54,7 @@ func TestParseLog(t *testing.T) {
 	// given
 	tmpFile := createTempLogFile(
 		os.TempDir(),
-		[]byte(`calin tty1                      0:00    0.00s  0:00   0.00s asdf\n`),
+		[]byte("calin tty1                      0:00    0.00s  0:00   0.00s asdf\n"),
 	)
 	defer os.Remove(tmpFile.Name()) // clean up
 
@@ -71,7 +72,7 @@ func TestParseLogEmpty(t *testing.T) {
 	// given
 	tmpFile := createTempLogFile(
 		os.TempDir(),
-		[]byte(`calin ssh                      0:00    0.00s  0:00   0.00s asdf\n`),
+		[]byte("calin ssh                      0:00    0.00s  0:00   0.00s asdf\n"),
 	)
 	defer os.Remove(tmpFile.Name()) // clean up
 
