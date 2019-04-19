@@ -1,5 +1,7 @@
 # KB
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/calini/kb)](https://goreportcard.com/report/github.com/calini/kb)
+
 KB is a Go API that shows computer availability in the Kilburn Building at the University of Manchester
 
 ## Using the API
