@@ -107,12 +107,12 @@ go build -o out/push push/main.go
 To run the `push`, you do:
 
 ```
-./push <path/to/logs>
+./out/push <path/to/logs>
 ```
 
 
 To run the API, you do:
 
 ```
-./pull
+./out/pull
 ```
