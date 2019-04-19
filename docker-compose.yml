@@ -1,0 +1,8 @@
+version: '3'
+services:
+  pull:
+    build: .
+    image: kb:latest
+    container_name: kb
+    ports:
+      - "8080:8080"

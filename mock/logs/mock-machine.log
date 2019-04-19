@@ -1,0 +1,1 @@
+calin tty1                      0:00    0.00s  0:00   0.00s xinit /etc/X11/xinit/xinitrc -- /usr/bin/X :0 vt1 -keeptty -auth /home/mbaxani2/.serverauth.15206
