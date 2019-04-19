@@ -2,7 +2,6 @@ package logs
 
 import (
 	"bufio"
-	"fmt"
 	"io/ioutil"
 	"os"
 	"path"
@@ -10,6 +9,8 @@ import (
 	"time"
 
 	"kb/machine"
+
+	log "github.com/sirupsen/logrus"
 )
 
 // CronFrequency is the expected frequency of the cron that produces the log files
@@ -28,7 +29,7 @@ func ParseLogFolder(logsPath string) (machine.LogReport, error) {
 	for _, fileInfo := range fileDescriptions {
 		file, err := os.Open(path.Join(logsPath, fileInfo.Name()))
 		if err != nil {
-			fmt.Errorf("Unable to open file: %v", err)
+			log.Errorf("Unable to open file: %v", err)
 		}
 		defer file.Close()
 
@@ -62,7 +63,7 @@ func ParseLogFile(file *os.File) machine.StatusLog {
 	// get the file info
 	stats, err := file.Stat()
 	if err != nil {
-		fmt.Errorf("Unable to read file information: %v", err)
+		log.Errorf("Unable to read file information: %v", err)
 	}
 
 	// Determine state based on file modTime and content
