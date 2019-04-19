@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// ConvertLogToStatus converts a raw StatusLog into a Status representation
+// TestGetStatus checks that conversion is done right
 func TestGetStatus(t *testing.T) {
 	statusLog := StatusLog{
 		Used,

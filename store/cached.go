@@ -2,11 +2,12 @@ package store
 
 import "kb/machine"
 
-// CacheStore provides
+// CacheStore stores the machine Snapshot in memory and has query methods for it
 type CacheStore struct {
 	cache machine.Snapshot // you might need to move this and use make()
 }
 
+// NewCacheStore initializes and returns a new CacheStore
 func NewCacheStore() CacheStore {
 	return CacheStore{make(machine.Snapshot)}
 }
