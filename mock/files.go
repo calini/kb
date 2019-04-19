@@ -7,11 +7,23 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
+// FileInfo is a mock FileInfo
 type FileInfo struct{ mock.Mock }
 
-func (mfi *FileInfo) Name() string       { return "mock-machine.log" }
-func (mfi *FileInfo) Size() int64        { return 0 }
-func (mfi *FileInfo) Mode() os.FileMode  { return os.FileMode(0777) }
+// Name ...
+func (mfi *FileInfo) Name() string { return "mock-machine.log" }
+
+// Size ...
+func (mfi *FileInfo) Size() int64 { return 0 }
+
+// Mode ...
+func (mfi *FileInfo) Mode() os.FileMode { return os.FileMode(0777) }
+
+// ModTime ...
 func (mfi *FileInfo) ModTime() time.Time { return time.Now() }
-func (mfi *FileInfo) IsDir() bool        { return false }
-func (mfi *FileInfo) Sys() interface{}   { return nil }
+
+// IsDir ...
+func (mfi *FileInfo) IsDir() bool { return false }
+
+// Sys ...
+func (mfi *FileInfo) Sys() interface{} { return nil }
