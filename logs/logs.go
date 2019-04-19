@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"io/ioutil"
-	"kb/machine"
 	"os"
 	"path"
 	"strings"
 	"time"
+
+	"kb/machine"
 )
 
 // CronFrequency is the expected frequency of the cron that produces the log files

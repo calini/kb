@@ -1,8 +1,6 @@
 package store
 
-import (
-	"kb/machine"
-)
+import "kb/machine"
 
 // CacheStore provides
 type CacheStore struct {

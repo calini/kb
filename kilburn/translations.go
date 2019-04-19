@@ -5,20 +5,20 @@ import "strings"
 // MapMachineToLab returns the lab name from a
 func MapMachineToLab(machineName string) string {
 	// Special case for Collab 1/2
-	if  machineName == "e-c07kilf3909" || strings.HasPrefix(machineName,"e-c07kilf391") {
+	if machineName == "e-c07kilf3909" || strings.HasPrefix(machineName, "e-c07kilf391") {
 		return "Collab 2"
-	} else if strings.HasPrefix(machineName,"e-c07kilf390") {
+	} else if strings.HasPrefix(machineName, "e-c07kilf390") {
 		return "Collab 1"
 	}
 
 	labsPrefixes := map[string]string{
-		"e-c07kig23":    "G23",
-		"e-c07kilf9":    "Tootil 0",
-		"e-c07kilf16":   "Tootil 1",
-		"e-c07kilf31":   "LF31",
-		"e-c07kilf17":   "LF17",
-		"e-c07ki18":     "Quiet",
-		"e-c07ki225":    "MSc",
+		"e-c07kig23":  "G23",
+		"e-c07kilf9":  "Tootil 0",
+		"e-c07kilf16": "Tootil 1",
+		"e-c07kilf31": "LF31",
+		"e-c07kilf17": "LF17",
+		"e-c07ki18":   "Quiet",
+		"e-c07ki225":  "MSc",
 	}
 	for prefix, lab := range labsPrefixes {
 		if strings.HasPrefix(machineName, prefix) {

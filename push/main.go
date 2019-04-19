@@ -5,10 +5,11 @@ import (
 	"encoding/json"
 	"errors"
 	"kb/logs"
-	"kb/machine"
 	"net/http"
 	"os"
 	"time"
+
+	"kb/machine"
 
 	log "github.com/sirupsen/logrus"
 )
